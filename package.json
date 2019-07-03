@@ -1,0 +1,11 @@
+{
+  "name": "lendsqrtask",
+  "version": "1.0.0",
+  "description": "LendSqr Backend Task",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Adesanya Adetomiwa",
+  "license": "ISC"
+}
