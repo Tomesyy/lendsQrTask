@@ -46,10 +46,13 @@ const database = {
     ]
 }
 
+// INDEX ROUTE
 app.get('/', (req, res) => {
     res.status(200).json(database.users);
 });
 
+
+// REGISTER ROUTE
 app.post('/register', (req, res) => {
     const { fullName, email, password, phoneNumber, address } = req.body;
     const id = database.users.length + 1;
@@ -86,6 +89,30 @@ app.post('/register', (req, res) => {
         });
     }
 });
+
+// LOGIN ROUTE
+app.post('/login', (req, res) => {
+    const { email, password } = req.body;
+    database.users.map(user => {
+        if(user.email === email && user.password === password){
+            const safeUser = {
+                id: user.id,
+                fullName: user.fullName,
+                email: user.email,
+                phoneNumber: user.phoneNumber,
+                address: user.address,
+                loans: user.loans
+            }
+            return res.status(200).json({
+                message: 'sucessfully logged in',
+                data: safeUser
+            })
+        }
+    });
+    
+    res.status(400).json('cannot authenticate user');
+});
+
 
 
 
