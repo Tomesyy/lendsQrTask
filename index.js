@@ -60,6 +60,26 @@ const database = {
             amount: "5,000",
             tenure: "3 months",
         }
+    ],
+    loanData: [
+        {
+            id: 1,
+            name: "Ren Money",
+            description: "Salary earners discounted loan",
+            interestRate: "3%",
+            amount: "50,000",
+            tenure: "1.5 yrs",
+
+        }, 
+        { 
+            id: 2,
+            name: "Kia Kia",
+            description: "Easy small loan",
+            interestRate: "5%",
+            amount: "5,000",
+            tenure: "3 months",
+
+        }
     ]
 }
 
@@ -136,6 +156,31 @@ app.get('/loans', (req, res) => {
 });
 
 // APPLY FOR LOAN ROUTE
+app.post('/loans/:id', (req, res) => {
+    let loanIni = false;
+    database.loans.map(loan => {
+        if(loan.id == req.params.id){
+            loanIni = true;
+            const { fullName } = req.body;
+            const newLoanData = {
+                id: database.loanData.length + 1,
+                name: fullName,
+                description: loan.description,
+                interestRate: loan.interestRate,
+                amount: loan.amount,
+                tenure: loan.tenure
+            }
+            database.loanData.push(newLoanData);
+            return res.status(200).json({
+                message: 'loan application successful',
+                data: newLoanData
+            });
+        }
+    });
+    if(!loanIni){
+        res.status(400).json('cannot complete loan application');
+    }
+});
 
 
 
