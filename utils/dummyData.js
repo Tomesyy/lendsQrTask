@@ -1,37 +1,28 @@
-const database = {
+module.exports = database = {
     users: [
         {
             id: 1,
-            fullName: 'Adesanya Adetomiwa',
+            name: 'Adesanya Adetomiwa',
             email: 'adetomiwaadesanya@yahoo.com',
             password: 'cookies',
             phoneNumber: '08178628499',
-            address: '32, Love All Street, Yaba, Lagos',
-            loans: [
-
-            ]
+            address: '32, Love All Street, Yaba, Lagos'
         },
         {
             id: 2,
-            fullName: 'Ren Money',
+            name: 'Ren Money',
             email: 'renmoney@yahoo.com',
             password: 'bananas',
             phoneNumber: '09012345599',
-            address: '32, Praise Street, Agege, Lagos',
-            loans: [
-
-            ]
+            address: '32, Praise Street, Agege, Lagos'
         },
         {
             id: 3,
-            fullName: 'Kia Kia',
+            name: 'Kia Kia',
             email: 'kiakia@yahoo.com',
             password: 'mangoes',
             phoneNumber: '08133455433',
-            address: '32, Paul Street, Yaba, Lagos',
-            loans: [
-
-            ]
+            address: '32, Paul Street, Yaba, Lagos'
         }
     ],
     loans: [
@@ -72,5 +63,3 @@ const database = {
         }
     ]
 }
-
-module.exports = database;
