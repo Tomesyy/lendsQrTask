@@ -43,6 +43,23 @@ const database = {
 
             ]
         }
+    ],
+    loans: [
+        {
+            id: 1,
+            description: "Salary earners discounted loan",
+            interestRate: "3%",
+            amount: "50,000",
+            tenure: "1.5 yrs",
+        },
+        {
+            
+            id: 2,
+            description: "Easy small loan",
+            interestRate: "5%",
+            amount: "5,000",
+            tenure: "3 months",
+        }
     ]
 }
 
@@ -112,6 +129,12 @@ app.post('/login', (req, res) => {
     
     res.status(400).json('cannot authenticate user');
 });
+
+// GET LOANS ROUTE
+app.get('/loans', (req, res) => {
+    return res.status(200).json(database.loans);
+});
+
 
 
 
