@@ -135,6 +135,8 @@ app.get('/loans', (req, res) => {
     return res.status(200).json(database.loans);
 });
 
+// APPLY FOR LOAN ROUTE
+
 
 
 
