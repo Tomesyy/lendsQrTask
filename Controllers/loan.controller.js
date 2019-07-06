@@ -11,14 +11,14 @@ const applyLoan = (req, res) => {
             loanIni = true;
             const { name } = req.body;
             const newLoanData = {
-                id: database.loanData.length + 1,
-                name: nbame,
+                id: database.loansData.length + 1,
+                name: name,
                 description: loan.description,
                 interestRate: loan.interestRate,
                 amount: loan.amount,
                 tenure: loan.tenure
             }
-            database.loanData.push(newLoanData);
+            database.loansData.push(newLoanData);
             return res.status(200).json({
                 message: 'loan application successful',
                 data: newLoanData
