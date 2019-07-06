@@ -12,7 +12,7 @@ const applyLoan = (req, res) => {
             const { name } = req.body;
             const newLoanData = {
                 id: database.loanData.length + 1,
-                name: name,
+                name: nbame,
                 description: loan.description,
                 interestRate: loan.interestRate,
                 amount: loan.amount,
