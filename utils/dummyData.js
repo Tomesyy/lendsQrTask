@@ -42,10 +42,11 @@ module.exports = database = {
             tenure: "3 months",
         }
     ],
-    loanData: [
+    loansData: [
         {
             id: 1,
             name: "Ren Money",
+            email: "renmoney@yahoo.com",
             description: "Salary earners discounted loan",
             interestRate: "3%",
             amount: "50,000",
@@ -55,6 +56,7 @@ module.exports = database = {
         { 
             id: 2,
             name: "Kia Kia",
+            email: "kiakia@yahoo.com",
             description: "Easy small loan",
             interestRate: "5%",
             amount: "5,000",
